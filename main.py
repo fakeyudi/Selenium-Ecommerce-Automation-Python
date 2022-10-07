@@ -9,7 +9,6 @@ def flipKartTest():
     driver.get(url)
     print("Launched URL: ", url)
     assert checkLogin(driver)
-    assert checkLogin(driver)
     assert checkEmailField(driver)
     assert checkPasswordField(driver)
     assert checkLoginButton(driver)
