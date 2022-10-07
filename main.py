@@ -82,10 +82,13 @@ def updatePriceFilter(driver):
     print("Price Filter Updated")
 
 def verifyNeedHelp(driver):
+    print("Scrolling Down....")
+    driver.find_element("tag name", "body").send_keys(Keys.END)
+    # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     print("Verifying Need Help....")
     elem = driver.find_element("xpath", "/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/a/div[1]/span")
     assert elem.location_once_scrolled_into_view
-    b = elem.text == "Need Help?"
+    b = elem.text == "Need help?"
     print("Need Help Found: ", b)
     return b
 
